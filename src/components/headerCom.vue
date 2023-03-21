@@ -131,6 +131,6 @@ span {
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-top: -30px;
+  margin-top: -25px;
 }
 </style>
