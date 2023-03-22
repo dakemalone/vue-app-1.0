@@ -11,9 +11,9 @@
     <el-dialog
       v-model="dialogVisible"
       title="Tips"
-      width="30%"
-      
+      width="60%"
     >
+    <div class="el-dialog-div"></div>
     <!-- :before-close="handleClose" -->
       <span>This is a message</span>
       <template #footer>
@@ -78,5 +78,9 @@ export default defineComponent({
 <style scoped>
 .dialog-footer button:first-child {
   margin-right: 10px;
+}
+.el-dialog-div {
+  height: 40vh;
+  overflow: auto;
 }
 </style>
