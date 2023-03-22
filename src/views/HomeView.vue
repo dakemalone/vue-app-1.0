@@ -13,9 +13,18 @@
       title="Tips"
       width="60%"
     >
-    <div class="el-dialog-div"></div>
+    <div class="el-dialog-div">
+      <el-text class="mx-1" type="primary">工单: {{ order }}</el-text>
+      &nbsp;&nbsp;<el-text class="mx-1" type="success">产品型号: {{ productType }}</el-text>
+      <br/>
+      <div class="el-progress-div">
+        <el-progress type="circle" :percentage="10" status="warning">锡膏！！</el-progress>
+        <el-progress type="circle" :percentage="50" status="warning">钢网！！</el-progress>
+        <el-progress type="circle" :percentage="70" status="warning">原件！！</el-progress>
+        <el-progress type="circle" :percentage="100" status="warning">治具！！</el-progress>
+      </div>
+    </div>
     <!-- :before-close="handleClose" -->
-      <span>This is a message</span>
       <template #footer>
         <span class="dialog-footer">
           <el-button @click="dialogVisible = false">Cancel</el-button>
@@ -52,6 +61,9 @@ export default defineComponent({
     }
   },
   setup(props) {
+    console.log(props)
+    const order = 80003380;
+    const productType = 'PCA-VLWH010-P_1';
     const dialogVisible = ref(false);
     const handleClose = (done: () => void) => {
       ElMessageBox.confirm('Are you sure to close this dialog?')
@@ -68,6 +80,8 @@ export default defineComponent({
     };
     return {
       a,
+      order,
+      productType,
       dialogVisible,
       handleClose,
       showPlanInfo,
@@ -78,6 +92,13 @@ export default defineComponent({
 <style scoped>
 .dialog-footer button:first-child {
   margin-right: 10px;
+}
+.el-progress-div {
+  position: relative;
+  top: calc(2vw);
+}
+.el-progress {
+  margin: 10px 10px 20px 20px;
 }
 .el-dialog-div {
   height: 40vh;
