@@ -126,8 +126,9 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
 span {
+  font-size: calc(1vw);
   display: flex;
   flex-direction: column;
   position: relative;
@@ -136,7 +137,10 @@ span {
 a {
   text-decoration: none;
 }
- 
+img {
+  width: calc(2vw);
+  height: calc(2vw);
+}
 /* .router-link-active {
   text-decoration: none;
 } */

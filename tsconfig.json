@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
+    // 因为vite使用sebuild来转义typescript，并所限与单文件转译的限制
+    "isolatedModules": true,
+    "noImplicitThis": true,
     "target": "esnext",
     "module": "esnext",
     "strict": true,
